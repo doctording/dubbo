@@ -1,0 +1,574 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>服务导出 · java-note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="doctording">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="invoke_service.html" />
+    
+    
+    <link rel="prev" href="start.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    dubbo基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="provider_service.html">
+            
+                <a href="provider_service.html">
+            
+                    
+                    服务导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="invoke_service.html">
+            
+                <a href="invoke_service.html">
+            
+                    
+                    服务引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="consumer.html">
+            
+                <a href="consumer.html">
+            
+                    
+                    服务调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >服务导出</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright @doctording all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x670D;&#x52A1;&#x5BFC;&#x51FA;">&#x670D;&#x52A1;&#x5BFC;&#x51FA;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#dubbo-&#x670D;&#x52A1;&#x5BFC;&#x51FA;">dubbo &#x670D;&#x52A1;&#x5BFC;&#x51FA;</a><i></i></div></li>
+<li><div><a href="#&#x670D;&#x52A1;&#x600E;&#x4E48;&#x5BFC;&#x51FA;&#x7684;&#xFF1F;">&#x670D;&#x52A1;&#x600E;&#x4E48;&#x5BFC;&#x51FA;&#x7684;&#xFF1F;</a><i></i></div></li>
+<li><div><a href="#&#x6E90;&#x7801;&#x5BFC;&#x51FA;&#x6D41;&#x7A0B;&#x56FE;">&#x6E90;&#x7801;&#x5BFC;&#x51FA;&#x6D41;&#x7A0B;&#x56FE;</a><i></i></div></li>
+<li><div><a href="#&#x6E90;&#x7801;&#x8D70;&#x8BFB;">&#x6E90;&#x7801;&#x8D70;&#x8BFB;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#servicebean-&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;">ServiceBean &#x53D1;&#x5E03;&#x4E8B;&#x4EF6;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#telnet-&#x670D;&#x52A1;&#x8C03;&#x7528;">telnet &#x670D;&#x52A1;&#x8C03;&#x7528;</a><i></i></div></li>
+<li><div><a href="#dubbo&#x670D;&#x52A1;&#x672C;&#x5730;&#x53D1;&#x5E03;&#xFF0C;&#x8FDC;&#x7A0B;&#x53D1;&#x5E03;&#x7684;&#x539F;&#x56E0;">dubbo&#x670D;&#x52A1;&#x672C;&#x5730;&#x53D1;&#x5E03;&#xFF0C;&#x8FDC;&#x7A0B;&#x53D1;&#x5E03;&#x7684;&#x539F;&#x56E0;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="&#x670D;&#x52A1;&#x5BFC;&#x51FA;">&#x670D;&#x52A1;&#x5BFC;&#x51FA;</h1>
+<h2 id="dubbo-&#x670D;&#x52A1;&#x5BFC;&#x51FA;">dubbo &#x670D;&#x52A1;&#x5BFC;&#x51FA;</h2>
+<p>Dubbo &#x670D;&#x52A1;&#x5BFC;&#x51FA;&#x8FC7;&#x7A0B;&#x59CB;&#x4E8E; Spring &#x5BB9;&#x5668;&#x53D1;&#x5E03;&#x5237;&#x65B0;&#x4E8B;&#x4EF6;&#xFF0C;Dubbo &#x5728;&#x63A5;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x540E;&#xFF0C;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x670D;&#x52A1;&#x5BFC;&#x51FA;&#x903B;&#x8F91;&#x3002;&#x6574;&#x4E2A;&#x903B;&#x8F91;&#x5927;&#x81F4;&#x53EF;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x90E8;&#x5206;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x524D;&#x7F6E;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x53C2;&#x6570;&#xFF0C;&#x7EC4;&#x88C5; URL&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x5BFC;&#x51FA;&#x670D;&#x52A1;&#xFF0C;&#x5305;&#x542B;&#x5BFC;&#x51FA;&#x670D;&#x52A1;&#x5230;&#x672C;&#x5730; (JVM)&#xFF0C;&#x548C;&#x5BFC;&#x51FA;&#x670D;&#x52A1;&#x5230;&#x8FDC;&#x7A0B;&#x4E24;&#x4E2A;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li>&#x7B2C;&#x4E09;&#x90E8;&#x5206;&#x662F;&#x5411;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x6CE8;&#x518C;&#x670D;&#x52A1;&#xFF0C;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x3002;</li>
+</ul>
+<p><img src="../imgs/export_time.png" alt=""></p>
+<h2 id="&#x670D;&#x52A1;&#x600E;&#x4E48;&#x5BFC;&#x51FA;&#x7684;&#xFF1F;">&#x670D;&#x52A1;&#x600E;&#x4E48;&#x5BFC;&#x51FA;&#x7684;&#xFF1F;</h2>
+<p>dubbo&#x4F1A;&#x5728;Spring&#x5B9E;&#x4F8B;&#x5316;bean&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x5237;&#x65B0;&#x5BB9;&#x5668;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x53D1;&#x5E03;<code>ContextRefreshEvent</code>&#x4E8B;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x901A;&#x77E5;&#x5B9E;&#x73B0;&#x4E86;<code>ApplicationListener</code>&#x7684;<code>ServiceBean</code>&#x7C7B;&#x8FDB;&#x884C;&#x56DE;&#x8C03;<code>onApplicationEvent</code>&#x4E8B;&#x4EF6;&#x65B9;&#x6CD5;&#xFF0C;dubbo&#x4F1A;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;<code>ServiceBean</code>&#x7236;&#x7C7B;<code>ServiceConfig</code>&#x7684;<code>export</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x7684;(&#x5F02;&#x6B65;&#x6216;&#x8005;&#x975E;&#x5F02;&#x6B65;)&#x53D1;&#x5E03;</p>
+<ul>
+<li>&#x66B4;&#x9732;&#x672C;&#x5730;&#x670D;&#x52A1;</li>
+<li>&#x66B4;&#x9732;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;</li>
+<li>&#x542F;&#x52A8;netty</li>
+<li>&#x8FDE;&#x63A5;zookeeper</li>
+<li>&#x5230;zookeeper&#x6CE8;&#x518C;</li>
+<li>&#x76D1;&#x542C;zookeeper</li>
+</ul>
+<p><img src="../imgs/dubbo_publish.png" alt=""></p>
+<ul>
+<li>&#x9996;&#x5148; ServiceConfig &#x7C7B;&#x62FF;&#x5230;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7684;&#x5B9E;&#x9645;&#x7C7B; ref(&#x5982;&#xFF1A;HelloWorldImpl),&#x7136;&#x540E;&#x901A;&#x8FC7; ProxyFactory &#x7C7B;&#x7684; getInvoker&#x65B9;&#x6CD5;&#x4F7F;&#x7528; ref &#x751F;&#x6210;&#x4E00;&#x4E2A; AbstractProxyInvoker &#x5B9E;&#x4F8B;&#xFF0C;&#x5230;&#x8FD9;&#x4E00;&#x6B65;&#x5C31;&#x5B8C;&#x6210;&#x5177;&#x4F53;&#x670D;&#x52A1;&#x5230; Invoker &#x7684;&#x8F6C;&#x5316;&#x3002;</li>
+<li>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F; Invoker &#x8F6C;&#x6362;&#x5230; Exporter &#x7684;&#x8FC7;&#x7A0B;&#x3002;Dubbo &#x5904;&#x7406;&#x670D;&#x52A1;&#x66B4;&#x9732;&#x7684;&#x5173;&#x952E;&#x5C31;&#x5728; Invoker &#x8F6C;&#x6362;&#x5230; Exporter &#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0A;&#x56FE;&#x4E2D;&#x7684;&#x7EA2;&#x8272;&#x90E8;&#x5206;&#x3002;<ul>
+<li>Dubbo &#x7684;&#x5B9E;&#x73B0;  Dubbo &#x534F;&#x8BAE;&#x7684; Invoker &#x8F6C;&#x4E3A; Exporter &#x53D1;&#x751F;&#x5728; DubboProtocol &#x7C7B;&#x7684; export &#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4E3B;&#x8981;&#x662F;&#x6253;&#x5F00; socket &#x4FA6;&#x542C;&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x5404;&#x79CD;&#x8BF7;&#x6C42;&#xFF0C;&#x901A;&#x8BAF;&#x7EC6;&#x8282;&#x7531; Dubbo &#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6E90;&#x7801;&#x5BFC;&#x51FA;&#x6D41;&#x7A0B;&#x56FE;">&#x6E90;&#x7801;&#x5BFC;&#x51FA;&#x6D41;&#x7A0B;&#x56FE;</h2>
+<p><img src="../imgs/export_source.png" alt=""></p>
+<h2 id="&#x6E90;&#x7801;&#x8D70;&#x8BFB;">&#x6E90;&#x7801;&#x8D70;&#x8BFB;</h2>
+<p><code>DubboBeanDefinitionParser implements BeanDefinitionParser</code>&#x89E3;&#x6790;xml&#x4E2D;&#x7684;dubbo&#x6807;&#x7B7E;&#xFF0C;&#x751F;&#x6210;<code>BeanDefinition</code></p>
+<p><img src="../imgs/dubbo_parse.png" alt=""></p>
+<p><code>org.apache.dubbo.config.spring.schema.DubboNamespaceHandler</code></p>
+<p>&#x6CE8;&#x89E3;&#x65B9;&#x5F0F;&#x5219;&#x662F;<code>ServiceClassPostProcessor</code>&#x7C7B;&#x8D1F;&#x8D23;&#x5C06;&#x5E26;&#x6709;<code>org.apache.dubbo.config.annotation.Service</code>&#x6CE8;&#x89E3;&#x7684;&#x7C7B;&#x6CE8;&#x518C;&#x4E3A;&#x666E;&#x901A;&#x7684; bean &#x548C; ServiceBean</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceClassPostProcessor</span> <span class="token keyword">implements</span> <span class="token class-name">BeanDefinitionRegistryPostProcessor</span><span class="token punctuation">,</span> <span class="token class-name">EnvironmentAware</span><span class="token punctuation">,</span>
+        <span class="token class-name">ResourceLoaderAware</span><span class="token punctuation">,</span> <span class="token class-name">BeanClassLoaderAware</span> <span class="token punctuation">{</span>
+</code></pre>
+<p><img src="../imgs/dubbo_namespacehandler.png" alt=""></p>
+<h3 id="servicebean-&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;">ServiceBean &#x53D1;&#x5E03;&#x4E8B;&#x4EF6;</h3>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceBean</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">ServiceConfig</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">implements</span> <span class="token class-name">InitializingBean</span><span class="token punctuation">,</span> <span class="token class-name">DisposableBean</span><span class="token punctuation">,</span>
+        <span class="token class-name">ApplicationContextAware</span><span class="token punctuation">,</span> <span class="token class-name">BeanNameAware</span><span class="token punctuation">,</span> <span class="token class-name">ApplicationEventPublisherAware</span> <span class="token punctuation">{</span>
+</code></pre>
+<p><img src="../imgs/dubbo_exportservice.png" alt=""></p>
+<p>&#x5728;ServiceBean&#x53D1;&#x5E03;&#x4E86;<code>ServiceBeanExportedEvent</code>&#x4E8B;&#x4EF6;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ServiceBeanExportedEvent</span> <span class="token keyword">extends</span> <span class="token class-name">ApplicationEvent</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * Create a new ApplicationEvent.
+     *
+     * @param serviceBean {@link ServiceBean} bean
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">ServiceBeanExportedEvent</span><span class="token punctuation">(</span><span class="token class-name">ServiceBean</span> serviceBean<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>serviceBean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get {@link ServiceBean} instance
+     *
+     * @return non-null
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">ServiceBean</span> <span class="token function">getServiceBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">ServiceBean</span><span class="token punctuation">)</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>ServiceConfig&#x5BFC;&#x51FA;&#x670D;&#x52A1;</li>
+</ul>
+<p><img src="../imgs/dubbo_serviceconfig.png" alt=""></p>
+<ul>
+<li><code>org.apache.dubbo.config.ServiceConfig#doExportUrls</code></li>
+</ul>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x591A;&#x5C11;&#x4E2A;&#x534F;&#x8BAE;&#xFF0C;&#x5C31;&#x5BFC;&#x51FA;&#x591A;&#x5C11;&#x6B21;&#xFF0C;&#x53EF;&#x4EE5;&#x5411;&#x591A;&#x4E2A;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x6CE8;&#x518C;</p>
+<p><img src="../imgs/dubbo_protocal.png" alt=""></p>
+<p>&#x5BFC;&#x51FA;&#x5230;&#x54EA;&#x91CC;&#xFF0C;&#x6BD4;&#x5982;zookeeper&#xFF0C;&#x5982;&#x4E0B;&#x53EF;&#x4EE5;&#x5230;registry</p>
+<p><img src="../imgs/dubbo_registry.png" alt=""></p>
+<p>&#x5BFC;&#x51FA;&#x672C;&#x5730;&#x7F13;&#x5B58;</p>
+<p><img src="../imgs/export_local.png" alt=""></p>
+<p>&#x5BFC;&#x51FA;&#x8FDC;&#x7A0B;zk&#xFF0C;&#x4EE3;&#x7406;</p>
+<p><img src="../imgs/dubbo_proxy_invoker.png" alt=""></p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">Invoker</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> invoker <span class="token operator">=</span> PROXY_FACTORY<span class="token punctuation">.</span><span class="token function">getInvoker</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">Class</span><span class="token punctuation">)</span> interfaceClass<span class="token punctuation">,</span> registryURL<span class="token punctuation">.</span><span class="token function">addParameterAndEncoded</span><span class="token punctuation">(</span>EXPORT_KEY<span class="token punctuation">,</span> url<span class="token punctuation">.</span><span class="token function">toFullString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">DelegateProviderMetaDataInvoker</span> wrapperInvoker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DelegateProviderMetaDataInvoker</span><span class="token punctuation">(</span>invoker<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">Exporter</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span> exporter <span class="token operator">=</span> PROTOCOL<span class="token punctuation">.</span><span class="token function">export</span><span class="token punctuation">(</span>wrapperInvoker<span class="token punctuation">)</span><span class="token punctuation">;</span>
+exporters<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>exporter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li><code>PROTOCOL.export(wrapperInvoker)</code>&#x8D70;&#x5230; <code>org.apache.dubbo.registry.integration.RegistryProtocol#export</code></li>
+</ul>
+<pre class="language-"><code class="lang-java"><span class="token comment">//export invoker</span>
+<span class="token keyword">final</span> <span class="token class-name">ExporterChangeableWrapper</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> exporter <span class="token operator">=</span> <span class="token function">doLocalExport</span><span class="token punctuation">(</span>originInvoker<span class="token punctuation">,</span> providerUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>&#x7EE7;&#x7EED;&#x8D70;&#x5230;<code>org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol#export</code></li>
+</ul>
+<p><img src="../imgs/open_server.png" alt=""></p>
+<p>&#x9700;&#x8981;&#x521B;&#x5EFA;&#x670D;&#x52A1;<code>createServer(url)</code></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">openServer</span><span class="token punctuation">(</span><span class="token class-name">URL</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// find server.</span>
+    <span class="token class-name">String</span> key <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//client can export a service which&apos;s only for server to invoke</span>
+    <span class="token keyword">boolean</span> isServer <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>IS_SERVER_KEY<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isServer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ProtocolServer</span> server <span class="token operator">=</span> serverMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>server <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                server <span class="token operator">=</span> serverMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>server <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    serverMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token function">createServer</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// server supports reset, use together with override</span>
+            server<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><code>createServer</code>&#x9ED8;&#x8BA4;netty</li>
+</ul>
+<p>url: <code>dubbo://192.168.1.3:20880/org.apache.dubbo.demo.DemoService?anyhost=true&amp;application=demo-provider&amp;bind.ip=192.168.1.3&amp;bind.port=20880&amp;channel.readonly.sent=true&amp;codec=dubbo&amp;deprecated=false&amp;dubbo=2.0.2&amp;dynamic=true&amp;generic=false&amp;heartbeat=60000&amp;interface=org.apache.dubbo.demo.DemoService&amp;metadata-type=remote&amp;methods=sayHello,sayHelloAsync&amp;pid=70345&amp;qos.port=22222&amp;release=&amp;side=provider&amp;timestamp=1606142890163</code></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">private</span> <span class="token class-name">ProtocolServer</span> <span class="token function">createServer</span><span class="token punctuation">(</span><span class="token class-name">URL</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    url <span class="token operator">=</span> <span class="token class-name">URLBuilder</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+            <span class="token comment">// send readonly event when server closes, it&apos;s enabled by default</span>
+            <span class="token punctuation">.</span><span class="token function">addParameterIfAbsent</span><span class="token punctuation">(</span>CHANNEL_READONLYEVENT_SENT_KEY<span class="token punctuation">,</span> <span class="token class-name">Boolean</span><span class="token punctuation">.</span>TRUE<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token comment">// enable heartbeat by default</span>
+            <span class="token punctuation">.</span><span class="token function">addParameterIfAbsent</span><span class="token punctuation">(</span>HEARTBEAT_KEY<span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>DEFAULT_HEARTBEAT<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">addParameter</span><span class="token punctuation">(</span>CODEC_KEY<span class="token punctuation">,</span> <span class="token class-name">DubboCodec</span><span class="token punctuation">.</span>NAME<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">String</span> str <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>SERVER_KEY<span class="token punctuation">,</span> DEFAULT_REMOTING_SERVER<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>str <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token class-name">ExtensionLoader</span><span class="token punctuation">.</span><span class="token function">getExtensionLoader</span><span class="token punctuation">(</span><span class="token class-name">Transporter</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasExtension</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RpcException</span><span class="token punctuation">(</span><span class="token string">&quot;Unsupported server type: &quot;</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">&quot;, url: &quot;</span> <span class="token operator">+</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">ExchangeServer</span> server<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        server <span class="token operator">=</span> <span class="token class-name">Exchangers</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> requestHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">RemotingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RpcException</span><span class="token punctuation">(</span><span class="token string">&quot;Fail to start server(url: &quot;</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">&quot;) &quot;</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    str <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>CLIENT_KEY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>str <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> supportedTypes <span class="token operator">=</span> <span class="token class-name">ExtensionLoader</span><span class="token punctuation">.</span><span class="token function">getExtensionLoader</span><span class="token punctuation">(</span><span class="token class-name">Transporter</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSupportedExtensions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>supportedTypes<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RpcException</span><span class="token punctuation">(</span><span class="token string">&quot;Unsupported client type: &quot;</span> <span class="token operator">+</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DubboProtocolServer</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5F00;&#x59CB;&#x7ED1;&#x5B9A;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ExchangeServer</span> <span class="token function">bind</span><span class="token punctuation">(</span><span class="token class-name">URL</span> url<span class="token punctuation">,</span> <span class="token class-name">ExchangeHandler</span> handler<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">RemotingException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">&quot;url == null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>handler <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">&quot;handler == null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    url <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">addParameterIfAbsent</span><span class="token punctuation">(</span><span class="token class-name">Constants</span><span class="token punctuation">.</span>CODEC_KEY<span class="token punctuation">,</span> <span class="token string">&quot;exchange&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">getExchanger</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8D70;&#x5230;<code>org.apache.dubbo.remoting.Transporters#bind</code></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">RemotingServer</span> <span class="token function">bind</span><span class="token punctuation">(</span><span class="token class-name">URL</span> url<span class="token punctuation">,</span> <span class="token class-name">ChannelHandler</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> handlers<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">RemotingException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">&quot;url == null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>handlers <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> handlers<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">&quot;handlers == null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">ChannelHandler</span> handler<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>handlers<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        handler <span class="token operator">=</span> handlers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        handler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChannelHandlerDispatcher</span><span class="token punctuation">(</span>handlers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">getTransporter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>&#x6700;&#x540E;&#x4F7F;&#x7528;netty&#x670D;&#x52A1;</li>
+</ul>
+<p><img src="../imgs/netty_server.png" alt=""></p>
+<h2 id="telnet-&#x670D;&#x52A1;&#x8C03;&#x7528;">telnet &#x670D;&#x52A1;&#x8C03;&#x7528;</h2>
+<p><img src="../imgs/dubbo_telnet.png" alt=""></p>
+<pre class="language-"><code class="lang-java">mubi<span class="token annotation punctuation">@mubideMacBook</span><span class="token operator">-</span><span class="token class-name">Pro</span> <span class="token operator">~</span> $ telnet <span class="token number">192.168</span><span class="token number">.1</span><span class="token number">.3</span> <span class="token number">20880</span>
+<span class="token class-name">Trying</span> <span class="token number">192.168</span><span class="token number">.1</span><span class="token number">.3</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token class-name">Connected</span> <span class="token keyword">to</span> <span class="token number">192.168</span><span class="token number">.1</span><span class="token number">.3</span><span class="token punctuation">.</span>
+<span class="token class-name">Escape</span> character is <span class="token string">&apos;^]&apos;</span><span class="token punctuation">.</span>
+<span class="token operator">^</span><span class="token punctuation">]</span>
+telnet<span class="token operator">&gt;</span>
+
+dubbo<span class="token operator">&gt;</span>ls
+PROVIDER<span class="token operator">:</span>
+org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>demo<span class="token punctuation">.</span><span class="token class-name">DemoService</span>
+
+dubbo<span class="token operator">&gt;</span>ls org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>demo<span class="token punctuation">.</span><span class="token class-name">DemoService</span>
+org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>demo<span class="token punctuation">.</span><span class="token class-name">DemoService</span> <span class="token punctuation">(</span>as provider<span class="token punctuation">)</span><span class="token operator">:</span>
+    sayHello
+    sayHelloAsync
+
+dubbo<span class="token operator">&gt;</span>invoke org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>demo<span class="token punctuation">.</span><span class="token class-name">DemoService</span><span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token string">&apos;aaa&apos;</span><span class="token punctuation">)</span>
+<span class="token class-name">Use</span> <span class="token keyword">default</span> service org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>dubbo<span class="token punctuation">.</span>demo<span class="token punctuation">.</span><span class="token class-name">DemoService</span><span class="token punctuation">.</span>
+result<span class="token operator">:</span> <span class="token string">&quot;Hello aaa, response from provider: null&quot;</span>
+elapsed<span class="token operator">:</span> <span class="token number">1014</span> ms<span class="token punctuation">.</span>
+dubbo<span class="token operator">&gt;</span>
+</code></pre>
+<h2 id="dubbo&#x670D;&#x52A1;&#x672C;&#x5730;&#x53D1;&#x5E03;&#xFF0C;&#x8FDC;&#x7A0B;&#x53D1;&#x5E03;&#x7684;&#x539F;&#x56E0;">dubbo&#x670D;&#x52A1;&#x672C;&#x5730;&#x53D1;&#x5E03;&#xFF0C;&#x8FDC;&#x7A0B;&#x53D1;&#x5E03;&#x7684;&#x539F;&#x56E0;</h2>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x6709;&#x672C;&#x5730;&#x66B4;&#x9732;&#x548C;&#x8FDC;&#x7A0B;&#x66B4;&#x9732;&#x5462;?&#x4E0D;&#x4ECE;&#x573A;&#x666F;&#x8003;&#x8651;&#x8BA8;&#x8BBA;&#x6280;&#x672F;&#x7684;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x662F;.&#x5728;dubbo&#x4E2D;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x53EF;&#x80FD;&#x65E2;&#x662F;Provider,&#x53C8;&#x662F;Consumer,&#x56E0;&#x6B64;&#x5C31;&#x5B58;&#x5728;&#x4ED6;&#x81EA;&#x5DF1;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x670D;&#x52A1;&#x7684;&#x60C5;&#x51B5;,&#x5982;&#x679C;&#x518D;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x53BB;&#x8BBF;&#x95EE;,&#x90A3;&#x81EA;&#x7136;&#x662F;&#x820D;&#x8FD1;&#x6C42;&#x8FDC;,&#x56E0;&#x6B64;&#x4ED6;&#x662F;&#x6709;&#x672C;&#x5730;&#x66B4;&#x9732;&#x670D;&#x52A1;&#x7684;&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;.&#x4ECE;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C31;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x4E24;&#x8005;&#x7684;&#x533A;&#x522B;</p>
+<ul>
+<li>&#x672C;&#x5730;&#x66B4;&#x9732;&#x662F;&#x66B4;&#x9732;&#x5728;JVM&#x4E2D;,&#x4E0D;&#x9700;&#x8981;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;</li>
+<li>&#x8FDC;&#x7A0B;&#x66B4;&#x9732;&#x662F;&#x5C06;ip,&#x7AEF;&#x53E3;&#x7B49;&#x4FE1;&#x606F;&#x66B4;&#x9732;&#x7ED9;&#x8FDC;&#x7A0B;&#x5BA2;&#x6237;&#x7AEF;,&#x8C03;&#x7528;&#x65F6;&#x9700;&#x8981;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x534F;&#x8BAE;&#x4E3A;&#x672C;&#x5730;&#x534F;&#x8BAE;(injvm)&#xFF0C;&#x5219;&#x8868;&#x793A;&#x4E0D;&#x5411;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x6CE8;&#x518C;&#x670D;&#x52A1;&#xFF0C;&#x5728;map&#x4E2D;&#x5B58;&#x50A8;&#x952E;&#x4E3A;notify,&#x503C;&#x4E3A;false,&#x8868;&#x793A;&#x5F53;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x76D1;&#x542C;&#x5230;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x53D1;&#x9001;&#x53D8;&#x5316;&#xFF08;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x589E;&#x52A0;&#x3001;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x51CF;&#x5C11;&#x7B49;&#x4E8B;&#x4EF6;&#xFF09;&#x65F6;&#x4E0D;&#x901A;&#x77E5;&#x3002;</p>
+<p><footer class="page-footer"><span class="copyright">Copyright @doctording all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2020-12-26 11:35:45
+</span></footer><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="start.html" class="navigation navigation-prev " aria-label="Previous page: dubbo基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="invoke_service.html" class="navigation navigation-next " aria-label="Next page: 服务引用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"服务导出","level":"1.3","depth":1,"next":{"title":"服务引用","level":"1.4","depth":1,"path":"doc/invoke_service.md","ref":"./doc/invoke_service.md","articles":[]},"previous":{"title":"dubbo基础","level":"1.2","depth":1,"path":"doc/start.md","ref":"./doc/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-lunr","-search","-sharing","ace","codeblock-filename","search-plus","sectionx","splitter","tbfed-pagefooter","expandable-chapters","back-to-top-button","code","uml","page-treeview","gittalk"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @doctording","modify_label":"该文件修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright @doctording","minHeaderCount":"2","minHeaderDeep":"2"},"prism":{},"ace":{},"splitter":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"uml":{"format":"svg"},"codeblock-filename":{},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"gittalk":{"clientID":"094729e19245d3fe84aa","clientSecret":"6c4cf7b48e7ae41c20d453c24eb9d5469e4d19fb","repo":"sword_at_offer","owner":"doctording","admin":["doctording"],"distractionFreeMode":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"doctording","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java-note","language":"zh-hans","gitbook":"*","description":"Java开发"},"file":{"path":"doc/provider_service.md","mtime":"2020-12-26T03:35:45.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-13T02:04:19.613Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-gittalk/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

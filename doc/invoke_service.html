@@ -1,0 +1,492 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>服务引用 · java-note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="doctording">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="consumer.html" />
+    
+    
+    <link rel="prev" href="provider_service.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    dubbo基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="provider_service.html">
+            
+                <a href="provider_service.html">
+            
+                    
+                    服务导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="invoke_service.html">
+            
+                <a href="invoke_service.html">
+            
+                    
+                    服务引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="consumer.html">
+            
+                <a href="consumer.html">
+            
+                    
+                    服务调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >服务引用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright @doctording all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x670D;&#x52A1;&#x5F15;&#x7528;&#x6D88;&#x8D39;&#x8005;&#x542F;&#x52A8;">&#x670D;&#x52A1;&#x5F15;&#x7528;(&#x6D88;&#x8D39;&#x8005;&#x542F;&#x52A8;)</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x6E90;&#x7801;&#x8D70;&#x8BFB;">&#x6E90;&#x7801;&#x8D70;&#x8BFB;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="&#x670D;&#x52A1;&#x5F15;&#x7528;&#x6D88;&#x8D39;&#x8005;&#x542F;&#x52A8;">&#x670D;&#x52A1;&#x5F15;&#x7528;(&#x6D88;&#x8D39;&#x8005;&#x542F;&#x52A8;)</h1>
+<p>&#x670D;&#x52A1;&#x5F15;&#x7528;&#x7684;&#x76EE;&#x7684;&#xFF1A;<code>&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x8005;</code>&#x5411;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x8BA2;&#x9605;<code>&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;</code>&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x5730;&#x5740;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x9645;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x3002;</p>
+<ol>
+<li>&#x628A;&#x670D;&#x52A1;&#x5F15;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x5C01;&#x88C5;&#x6210;URL&#x5E76;&#x6CE8;&#x518C;&#x5230;zk&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;;  </li>
+<li>&#x76D1;&#x542C;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x7684;&#x670D;&#x52A1;&#x7684;&#x4E0A;&#x4E0B;&#x7EBF;;</li>
+<li>&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x7AEF;&#xFF0C;&#x521B;&#x5EFA;NettyClient&#x5BF9;&#x8C61;;</li>
+<li>&#x5C06;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5305;&#x88C5;&#x6210;<code>DubboInvoker</code>&#x6D88;&#x8D39;&#x7AEF;&#x7684;&#x8C03;&#x7528;&#x94FE;&#xFF0C;&#x521B;&#x5EFA;&#x6D88;&#x8D39;&#x7AEF;Invoker&#x5B9E;&#x4F8B;&#x7684;&#x670D;&#x52A1;&#x4EE3;&#x7406;&#x5E76;&#x8FD4;&#x56DE;;  </li>
+</ol>
+<h2 id="&#x6E90;&#x7801;&#x8D70;&#x8BFB;">&#x6E90;&#x7801;&#x8D70;&#x8BFB;</h2>
+<ul>
+<li><p><code>org.apache.dubbo.config.spring.schema.DubboNamespaceHandler#init</code></p>
+</li>
+<li><p><code>org.apache.dubbo.config.ReferenceConfig#createProxy</code></p>
+</li>
+</ul>
+<p><img src="../imgs/consumer_referenceconfig.png" alt=""></p>
+<ul>
+<li><code>org.apache.dubbo.registry.integration.RegistryProtocol#refer</code></li>
+</ul>
+<p><code>org.apache.dubbo.registry.integration.RegistryProtocol.doRefer</code></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">private</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">Invoker</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">doRefer</span><span class="token punctuation">(</span><span class="token class-name">Cluster</span> cluster<span class="token punctuation">,</span> <span class="token class-name">Registry</span> registry<span class="token punctuation">,</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> type<span class="token punctuation">,</span> <span class="token class-name">URL</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">//&#x6784;&#x5EFA;RegistryDirectory,&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x7406;&#x89E3;&#x4E3A;&#x6CE8;&#x518C;&#x8D44;&#x6E90;,&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x6D88;&#x8D39;&#x8005;/&#x670D;&#x52A1;/&#x8DEF;&#x7531;&#x7B49;&#x76F8;&#x5173;&#x4FE1;&#x606F;</span>
+    <span class="token comment">//&#x5176;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x56DE;&#x8C03;&#x76D1;&#x542C;&#x5668;</span>
+    <span class="token class-name">RegistryDirectory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> directory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegistryDirectory</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    directory<span class="token punctuation">.</span><span class="token function">setRegistry</span><span class="token punctuation">(</span>registry<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    directory<span class="token punctuation">.</span><span class="token function">setProtocol</span><span class="token punctuation">(</span>protocol<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">URL</span> subscribeUrl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">URL</span><span class="token punctuation">(</span><span class="token class-name">Constants</span><span class="token punctuation">.</span>CONSUMER_PROTOCOL<span class="token punctuation">,</span> <span class="token class-name">NetUtils</span><span class="token punctuation">.</span><span class="token function">getLocalHost</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> type<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> directory<span class="token punctuation">.</span><span class="token function">getUrl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getParameters</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Constants</span><span class="token punctuation">.</span>ANY_VALUE<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">getServiceInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token operator">&amp;&amp;</span> url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token class-name">Constants</span><span class="token punctuation">.</span>REGISTER_KEY<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">//&#x5411;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x6CE8;&#x518C;&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x8005;</span>
+        registry<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>subscribeUrl<span class="token punctuation">.</span><span class="token function">addParameters</span><span class="token punctuation">(</span><span class="token class-name">Constants</span><span class="token punctuation">.</span>CATEGORY_KEY<span class="token punctuation">,</span> <span class="token class-name">Constants</span><span class="token punctuation">.</span>CONSUMERS_CATEGORY<span class="token punctuation">,</span>
+                <span class="token class-name">Constants</span><span class="token punctuation">.</span>CHECK_KEY<span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x4ECE;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x8BA2;&#x9605;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#xFF08;&#x5373;&#x5F15;&#x7528;&#x7684;&#x670D;&#x52A1;&#xFF09;</span>
+    directory<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>subscribeUrl<span class="token punctuation">.</span><span class="token function">addParameter</span><span class="token punctuation">(</span><span class="token class-name">Constants</span><span class="token punctuation">.</span>CATEGORY_KEY<span class="token punctuation">,</span>
+            <span class="token class-name">Constants</span><span class="token punctuation">.</span>PROVIDERS_CATEGORY
+                    <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token class-name">Constants</span><span class="token punctuation">.</span>CONFIGURATORS_CATEGORY
+                    <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span> <span class="token class-name">Constants</span><span class="token punctuation">.</span>ROUTERS_CATEGORY<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//</span>
+    <span class="token keyword">return</span> cluster<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>directory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>url:<code>consumer://172.28.101.52/org.apache.dubbo.demo.DemoService?application=demo-consumer&amp;category=consumers&amp;check=false&amp;dubbo=2.0.2&amp;init=false&amp;interface=org.apache.dubbo.demo.DemoService&amp;metadata-type=remote&amp;methods=sayHello,sayHelloAsync&amp;pid=75487&amp;qos.port=33333&amp;side=consumer&amp;sticky=false&amp;timestamp=1606215560930</code></p>
+<p><img src="../imgs/consumer_refer.png" alt=""></p>
+<p>zk&#x4E0A;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6CE8;&#x518C;&#x7684;consumer</p>
+<p><img src="../imgs/consumer_zk.png" alt=""></p>
+<ul>
+<li><code>org.apache.dubbo.registry.integration.RegistryDirectory#subscribe</code></li>
+</ul>
+<p>&#x6CE8;&#x518C;&#x76D1;&#x542C;&#x670D;&#x52A1;</p>
+<ul>
+<li><code>org.apache.dubbo.rpc.proxy.javassist.JavassistProxyFactory#getProxy</code></li>
+</ul>
+<p>&#x521B;&#x5EFA;&#x4EE3;&#x7406;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JavassistProxyFactory</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractProxyFactory</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">&quot;unchecked&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">getProxy</span><span class="token punctuation">(</span><span class="token class-name">Invoker</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> invoker<span class="token punctuation">,</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> interfaces<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">)</span> <span class="token class-name">Proxy</span><span class="token punctuation">.</span><span class="token function">getProxy</span><span class="token punctuation">(</span>interfaces<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InvokerInvocationHandler</span><span class="token punctuation">(</span>invoker<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">Invoker</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">getInvoker</span><span class="token punctuation">(</span><span class="token class-name">T</span> proxy<span class="token punctuation">,</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> type<span class="token punctuation">,</span> <span class="token class-name">URL</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// TODO Wrapper cannot handle this scenario correctly: the classname contains &apos;$&apos;</span>
+        <span class="token keyword">final</span> <span class="token class-name">Wrapper</span> wrapper <span class="token operator">=</span> <span class="token class-name">Wrapper</span><span class="token punctuation">.</span><span class="token function">getWrapper</span><span class="token punctuation">(</span>proxy<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos;$&apos;</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> proxy<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">AbstractProxyInvoker</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>proxy<span class="token punctuation">,</span> type<span class="token punctuation">,</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">doInvoke</span><span class="token punctuation">(</span><span class="token class-name">T</span> proxy<span class="token punctuation">,</span> <span class="token class-name">String</span> methodName<span class="token punctuation">,</span>
+                                      <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> parameterTypes<span class="token punctuation">,</span>
+                                      <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arguments<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> wrapper<span class="token punctuation">.</span><span class="token function">invokeMethod</span><span class="token punctuation">(</span>proxy<span class="token punctuation">,</span> methodName<span class="token punctuation">,</span> parameterTypes<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="../imgs/consumer_proxy.png" alt=""></p>
+<ul>
+<li><code>org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol#protocolBindingRefer</code></li>
+</ul>
+<p><img src="../imgs/consumer_getclients.png" alt=""></p>
+<p>&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</p>
+<pre class="language-"><code class="lang-java"> <span class="token comment">/**
+ * Create new connection
+ *
+ * @param url
+ */</span>
+<span class="token keyword">private</span> <span class="token class-name">ExchangeClient</span> <span class="token function">initClient</span><span class="token punctuation">(</span><span class="token class-name">URL</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// client type setting.</span>
+    <span class="token class-name">String</span> str <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>CLIENT_KEY<span class="token punctuation">,</span> url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>SERVER_KEY<span class="token punctuation">,</span> DEFAULT_REMOTING_CLIENT<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    url <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">addParameter</span><span class="token punctuation">(</span>CODEC_KEY<span class="token punctuation">,</span> <span class="token class-name">DubboCodec</span><span class="token punctuation">.</span>NAME<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// enable heartbeat by default</span>
+    url <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">addParameterIfAbsent</span><span class="token punctuation">(</span>HEARTBEAT_KEY<span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>DEFAULT_HEARTBEAT<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// BIO is not allowed since it has severe performance issue.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>str <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token class-name">ExtensionLoader</span><span class="token punctuation">.</span><span class="token function">getExtensionLoader</span><span class="token punctuation">(</span><span class="token class-name">Transporter</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasExtension</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RpcException</span><span class="token punctuation">(</span><span class="token string">&quot;Unsupported client type: &quot;</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">+</span>
+                <span class="token string">&quot; supported client type is &quot;</span> <span class="token operator">+</span> <span class="token class-name">StringUtils</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token class-name">ExtensionLoader</span><span class="token punctuation">.</span><span class="token function">getExtensionLoader</span><span class="token punctuation">(</span><span class="token class-name">Transporter</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSupportedExtensions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">ExchangeClient</span> client<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment">// connection should be lazy</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>LAZY_CONNECT_KEY<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LazyConnectExchangeClient</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> requestHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            client <span class="token operator">=</span> <span class="token class-name">Exchangers</span><span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> requestHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">RemotingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RpcException</span><span class="token punctuation">(</span><span class="token string">&quot;Fail to create remoting client for service(&quot;</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">&quot;): &quot;</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> client<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FDB;&#x5165;<code>org.apache.dubbo.remoting.exchange.support.header.HeaderExchanger#connect</code></p>
+<p>&#x63A5;&#x7740;&#x8FDB;&#x5165;<code>org.apache.dubbo.remoting.Transporters#connect</code></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Client</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token class-name">URL</span> url<span class="token punctuation">,</span> <span class="token class-name">ChannelHandler</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> handlers<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">RemotingException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">&quot;url == null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">ChannelHandler</span> handler<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>handlers <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> handlers<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        handler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChannelHandlerAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>handlers<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        handler <span class="token operator">=</span> handlers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        handler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChannelHandlerDispatcher</span><span class="token punctuation">(</span>handlers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">getTransporter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="../imgs/consumer_netty.png" alt=""></p>
+<p>&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x7684;&#x662F;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;</p>
+<p><img src="../imgs/consumer_proxy2.png" alt=""></p>
+<p><footer class="page-footer"><span class="copyright">Copyright @doctording all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2020-12-26 11:37:51
+</span></footer><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="provider_service.html" class="navigation navigation-prev " aria-label="Previous page: 服务导出">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="consumer.html" class="navigation navigation-next " aria-label="Next page: 服务调用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"服务引用","level":"1.4","depth":1,"next":{"title":"服务调用","level":"1.5","depth":1,"path":"doc/consumer.md","ref":"./doc/consumer.md","articles":[]},"previous":{"title":"服务导出","level":"1.3","depth":1,"path":"doc/provider_service.md","ref":"./doc/provider_service.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-lunr","-search","-sharing","ace","codeblock-filename","search-plus","sectionx","splitter","tbfed-pagefooter","expandable-chapters","back-to-top-button","code","uml","page-treeview","gittalk"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright @doctording","modify_label":"该文件修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright @doctording","minHeaderCount":"2","minHeaderDeep":"2"},"prism":{},"ace":{},"splitter":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"uml":{"format":"svg"},"codeblock-filename":{},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"gittalk":{"clientID":"094729e19245d3fe84aa","clientSecret":"6c4cf7b48e7ae41c20d453c24eb9d5469e4d19fb","repo":"sword_at_offer","owner":"doctording","admin":["doctording"],"distractionFreeMode":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"doctording","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java-note","language":"zh-hans","gitbook":"*","description":"Java开发"},"file":{"path":"doc/invoke_service.md","mtime":"2020-12-26T03:37:51.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-13T02:04:19.613Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-gittalk/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
