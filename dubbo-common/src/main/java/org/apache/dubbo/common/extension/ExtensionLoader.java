@@ -141,6 +141,7 @@ public class ExtensionLoader<T> {
     }
 
     private ExtensionLoader(Class<?> type) {
+        System.out.println("call private ExtensionLoader(Class<?> type):" + type);
         this.type = type;
         objectFactory = (type == ExtensionFactory.class ? null : ExtensionLoader.getExtensionLoader(ExtensionFactory.class).getAdaptiveExtension());
     }
@@ -151,6 +152,7 @@ public class ExtensionLoader<T> {
 
     @SuppressWarnings("unchecked")
     public static <T> ExtensionLoader<T> getExtensionLoader(Class<T> type) {
+        System.out.println("call getExtensionLoader(Class<T> type):" + type);
         if (type == null) {
             throw new IllegalArgumentException("Extension type == null");
         }
@@ -573,6 +575,7 @@ public class ExtensionLoader<T> {
 
     @SuppressWarnings("unchecked")
     public T getAdaptiveExtension() {
+        System.out.println("call getAdaptiveExtension()");
         Object instance = cachedAdaptiveInstance.get();
         if (instance == null) {
             if (createAdaptiveInstanceError != null) {
