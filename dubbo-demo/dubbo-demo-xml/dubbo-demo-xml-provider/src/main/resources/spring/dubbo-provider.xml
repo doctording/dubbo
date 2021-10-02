@@ -32,4 +32,9 @@
 
     <dubbo:service interface="org.apache.dubbo.demo.DemoService" ref="demoService"/>
 
+
+    <bean id="greetingService" class="org.apache.dubbo.demo.provider.GreetingServiceImpl"/>
+
+    <dubbo:service interface="org.apache.dubbo.demo.GreetingService" ref="greetingService" generic="true"/>
+
 </beans>

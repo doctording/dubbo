@@ -18,6 +18,7 @@ package org.apache.dubbo.demo.consumer;
 
 import org.apache.dubbo.demo.DemoService;
 
+import org.apache.dubbo.rpc.service.GenericService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.concurrent.CompletableFuture;
@@ -27,7 +28,16 @@ public class Application {
      * In order to make sure multicast registry works, need to specify '-Djava.net.preferIPv4Stack=true' before
      * launch the application
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-consumer.xml");
+        context.start();
+
+        GenericService barService = (GenericService) context.getBean("greetingService");
+        Object result = barService.$invoke("hello", new String[] { "java.lang.String" }, new Object[] { "World" });
+        System.out.println(result);
+    }
+
+    static void test1() throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-consumer.xml");
         context.start();
         DemoService demoService = context.getBean("demoService", DemoService.class);

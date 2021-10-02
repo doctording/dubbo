@@ -4,3 +4,4 @@
 * [服务导出](./doc/provider_service.md)
 * [服务引用](./doc/invoke_service.md)
 * [服务调用](./doc/consumer.md)
+    * [泛化调用](./doc/generic_consumer.md)
